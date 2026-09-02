@@ -1,15 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printNameNTimes(string name, int n) {
-    if (n <= 0) {
+void printNameNTimes(string name, int n)
+{
+    if (n <= 0)
+    {
         return;
     }
     cout << name << endl;
     printNameNTimes(name, n - 1);
 }
 
-int main() {
+int main()
+{
     string name;
     int n;
 
@@ -18,7 +21,7 @@ int main() {
     cout << "Enter the number of times to print your name: ";
     cin >> n;
     printNameNTimes(name, n);
- 
+
     return 0;
 }
 
