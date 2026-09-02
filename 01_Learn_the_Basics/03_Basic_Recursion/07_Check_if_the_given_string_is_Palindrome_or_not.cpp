@@ -5,16 +5,22 @@ using namespace std;
 bool isPalindrome_Iterative(string str)
 {
     int start = 0;
-    int end = str.length() - 1;
+    // int end = str.length() - 1;
+    int end = str.size() - 1;
 
-    while (start < end)
+    while (start <= end)
     {
-        if (str[start] != str[end])
+        if (!isalnum(str[start]))
+            start++;
+        else if (!isalnum(str[end]))
+            end--;
+        else
         {
-            return false;
+            if (tolower(str[start]) != tolower(str[end]))
+                return false;
+            start++;
+            end--;
         }
-        start++;
-        end--;
     }
     return true;
 }
@@ -23,14 +29,12 @@ bool isPalindrome_Iterative(string str)
 bool isPalindrome_Recursive(string str, int start, int end)
 {
     if (start >= end)
-    {
         return true;
-    }
-    if (str[start] != str[end])
-    {
-        return false;
-    }
-    return isPalindrome_Recursive(str, start + 1, end - 1);
+    if (!isalnum(str[start]))
+        return isPalindrome_Recursive(str, start + 1, end);
+    if (!isalnum(str[end]))
+        return isPalindrome_Recursive(str, start, end - 1);
+    return tolower(str[start]) == tolower(str[end]) && isPalindrome_Recursive(str, start + 1, end - 1);
 }
 
 int main()
@@ -40,7 +44,7 @@ int main()
     cin >> str;
 
     isPalindrome_Iterative(str) ? cout << "The given string is a palindrome." << endl : cout << "The given string is not a palindrome." << endl;
-    isPalindrome_Recursive(str, 0, str.length() - 1) ? cout << "The given string is a palindrome." << endl : cout << "The given string is not a palindrome." << endl;
+    isPalindrome_Recursive(str, 0, str.size() - 1) ? cout << "The given string is a palindrome." << endl : cout << "The given string is not a palindrome." << endl;
 
     return 0;
 }
