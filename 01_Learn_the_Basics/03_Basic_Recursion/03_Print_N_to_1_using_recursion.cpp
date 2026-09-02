@@ -4,7 +4,7 @@ using namespace std;
 // Iterative Approach
 void printNumbers_iterative(int N)
 {
-    for (int i = 1; i <= N; i++)
+    for (int i = N; i >= 1; i--)
     {
         cout << i << endl;
     }
@@ -16,8 +16,8 @@ void printNumbers_recursive(int count, int N)
     if (count > N)
         return;
 
+    printNumbers_recursive(count + 1, N);
     cout << count << endl;
-    printNumbers(count + 1, N);
 }
 int main()
 {

@@ -1,7 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printNameNTimes(string name, int n)
+// Iterative Approach
+void printNameNTimes_iterative(string name, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << name << endl;
+    }
+}
+
+// Recursive Approach
+void printNameNTimes_recursive(string name, int n)
 {
     if (n <= 0)
     {
@@ -20,10 +30,20 @@ int main()
     cin >> name;
     cout << "Enter the number of times to print your name: ";
     cin >> n;
-    printNameNTimes(name, n);
+
+    cout << "Printing name using Iterative Approach:" << endl;
+    printNameNTimes_iterative(name, n);
+
+    cout << "Printing name using Recursive Approach:" << endl;
+    printNameNTimes_recursive(name, n);
 
     return 0;
 }
 
+// Iterative Approach
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+// Recursive Approach
 // Time Complexity: O(n)
 // Space Complexity: O(n) (due to recursion stack)
