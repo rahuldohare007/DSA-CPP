@@ -26,6 +26,13 @@ int main()
 
     return 0;
 }
+// Example:
+// Input: arr = [1, 2, 3, 2, 1, 3, 1]
+// Output:
+// Element Frequencies:
+// Element: 1, Frequency: 3
+// Element: 2, Frequency: 2
+// Element: 3, Frequency: 2 
 
 // Time Complexity: O(n), where n is the number of elements in the array.
 // This is because we traverse the array once to count frequencies.
