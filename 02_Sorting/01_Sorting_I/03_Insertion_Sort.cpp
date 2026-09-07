@@ -16,6 +16,26 @@ void insertionSort(int arr[], int n) {
         arr[j + 1] = key;
     }
 }
+
+// Recursive implementation of Insertion Sort
+void insertionSortRecursive(int arr[], int n) {
+    if (n <= 1) {
+        return;
+    }
+
+    // Sort first n-1 elements
+    insertionSortRecursive(arr, n - 1);
+
+    // Insert last element at its correct position in sorted array.
+    int last = arr[n - 1];
+    int j = n - 2;
+
+    while (j >= 0 && arr[j] > last) {
+        arr[j + 1] = arr[j];
+        j--;
+    }
+    arr[j + 1] = last;
+}
 int main() {
     int arr[] = {12, 11, 13, 5, 6};
     int n = sizeof(arr) / sizeof(arr[0]);
