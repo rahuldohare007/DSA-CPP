@@ -60,6 +60,12 @@ int main() {
     return 0;
 }
 
+// Example: For an array arr = [10, 20, 4, 45, 99]
+
+// Output:
+// The second largest element is: 45
+// The second smallest element is: 10
+
 // Time Complexity: O(n)
 // - We traverse the array once to find the second largest and second smallest elements.
 
