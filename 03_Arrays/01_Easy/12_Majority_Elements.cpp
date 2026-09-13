@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Boyer-Moore Voting Algorithm
 int majorityElements(vector<int> &nums)
 {
     int res = 0, majority = 0;
@@ -32,3 +33,13 @@ int main()
 
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+
+// Boyer-Moore Voting Algorithm
+// Objective: Find the majority element (appears more than ⌊n / 2⌋ times) in O(n) time and O(1) space.
+
+// Logic:
+// • Initialize: Start with result (the candidate) and count (its frequency) both set to 0.
+// • Iterate: For each number in the array:
+//     ○ If count is 0, set result to the current number.
+//     ○ Increment count if the current number matches result, otherwise decrement it. 
+//     ○ Return: After the loop, result holds the majority element.
