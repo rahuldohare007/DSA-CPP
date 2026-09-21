@@ -17,26 +17,30 @@ bool isPrime(int num)
     return true;
 }
 
+int primeCount(int num)
+{
+    int count = 0;
+    for (int i = 2; i <= num; i++)
+    {
+        if (isPrime(i))
+            count++;
+    }
+    return count;
+}
 int main()
 {
 
     int num;
     cin >> num;
-    if (isPrime(num))
-        cout << "Prime" << endl;
-    else
-        cout << "Not Prime" << endl;
+    cout << primeCount(num) << endl;
 
     return 0;
 }
 
 // Example Input/Output:
-// Input: 17
-// Output: Prime
-
-// Example Input/Output:
 // Input: 10
-// Output: Not Prime
+// Output: 4
+// Explanation: There are 4 prime numbers less than or equal to 10, which are 2, 3, 5, and 7.
 
-// Time Complexity: O(sqrt(n))
+// Time Complexity: O(n)
 // Space Complexity: O(1)
