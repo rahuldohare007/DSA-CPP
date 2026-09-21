@@ -3,22 +3,25 @@ using namespace std;
 
 bool isomorphicString(string s, string t)
 {
-    if (s.length() != t.length())
+    if (s.size() != t.size())
         return false;
-    unordered_map<char, char> mp;
-    for (int i = 0; i < s.length(); i++)
+
+    int sToT[256] = {0}, tToS[256] = {0};
+
+    for (int i = 0; i < s.size(); i++)
     {
-        if (mp.find(s[i]) == mp.end())
-        {
-            if (mp.find(t[i]) != mp.end())
-                return false;
-            mp[s[i]] = t[i];
-        }
-        else
-        {
-            if (mp[s[i]] != t[i])
-                return false;
-        }
+        char a = s[i], b = t[i];
+
+        // Existing mapping must be consistent
+        if (sToT[a] != 0 && sToT[a] != b)
+            return false;
+
+        // TWo different chars cannot map to same char
+        if (tToS[b] != 0 && tToS[b] != a)
+            return false;
+
+        sToT[a] = b;
+        tToS[b] = a;
     }
     return true;
 }
@@ -49,4 +52,4 @@ int main()
 // Hence the strings are not isomorphic.
 
 // Time Complexity: O(n)
-// Space Complexity: O(n)
+// Space Complexity: O(1)
