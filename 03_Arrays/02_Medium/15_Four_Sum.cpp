@@ -80,3 +80,6 @@ int main()
 // Example 2:
 // Input: nums = [2,2,2,2,2], target = 8
 // Output: [[2,2,2,2]]
+
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
