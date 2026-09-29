@@ -3,12 +3,14 @@ using namespace std;
 
 bool isPerfect(int number)
 {
-    int sum = 0;
-    for (int i = 1; i < number; i++)
+    int sum = 1;
+    if (number == 1)
+        return fasle;
+    for (int i = 2; i < number / i; i++)
     {
-        if (number % i == 0)
+        if (number % i == 0 && i != number / i)
         {
-            sum += i;
+            sum += i + (number / i);
         }
     }
     return sum == number;
