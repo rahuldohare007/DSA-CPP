@@ -49,3 +49,5 @@ int main()
 // Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
 // Output: false
 
+// Time Complexity: O(m + n), where m is the number of rows and n is the number of columns in the matrix. In the worst case, we may have to traverse the entire row and column.
+// Space Complexity: O(1)
