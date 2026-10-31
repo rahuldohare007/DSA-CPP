@@ -6,7 +6,6 @@ using namespace std;
 // The test cases are generated such that the number of unique combinations that sum up to target is less than 150 combinations for the given input.
 
 vector<vector<int>> combinationSum(vector<int> &candidates, int target){
-    
     vector<vector<int>> ans;
     vector<int> ds;
 
