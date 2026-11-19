@@ -55,6 +55,10 @@ int main()
     // Create cycle: -4 points back to 2
     head->next->next->next->next = head->next;
 
+    // Print linked list
+    cout << "Linked List: ";
+    printList(head);
+
     cout << boolalpha << hasCycle(head) << endl;
 
     // Break the cycle before deleting nodes
